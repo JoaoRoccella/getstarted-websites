@@ -1,0 +1,10 @@
+# Necessary when hosting on shared servers, running different PHP versions
+# Make sure of youor configuration in PHP.ini
+# Replace 'yourftpuser' with your FTP user
+AddHandler php73-script .php
+suPHP_ConfigPath /home/yourftpuser/
+
+# Replace 'yourdomain.com' with your own domain, with or without 'www.', it's on you
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://www.yourdomain.com/$1 [R,L]
